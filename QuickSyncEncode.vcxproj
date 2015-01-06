@@ -48,7 +48,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\deps\include\intelmediasdk;..\..\deps\INTERNALS\include;..\..\deps\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\deps\include\intelmediasdk;.\deps\INTERNALS\include;.\deps\include;.\queue;.\queue\common;.\queue\common\compatibility;.\queue\common\Thread</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -57,16 +57,17 @@
     <Lib>
       <OutputFile>$(OutDir)$(TargetName)d$(TargetExt)</OutputFile>
       <AdditionalDependencies>libmfx_d.lib;queued.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\deps\lib;..\..\deps\INTERNALS\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\deps\lib;..\deps\INTERNALS\lib;.\queue\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
     </Lib>
     <PostBuildEvent>
-      <Command>$(ProjectDir)copyLibsToDeps.bat</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>
-$(ProjectDir)copyHeadersToDeps.bat</Command>
+      </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
